@@ -1,0 +1,39 @@
+package com.zingaretti.bix;
+
+import java.util.List;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import com.tutorialspoint.User;
+import com.tutorialspoint.UserDao;
+
+@Path("/SkaterPoolService")
+public class UserService {
+
+   SkaterPoolDao userDao = new SkaterPoolDao();
+
+   @GET
+   @Path("/skaters")
+   @Produces(MediaType.APPLICATION_XML)
+   public List<User> getSkaters(){
+      return userDao.getAllUsers();
+   }	
+   
+   @PUT
+   @Path("/skaters")
+   public void addSkater()
+   {
+	   
+   }
+   
+   @POST
+   @Path("skaters")
+   public void modifySkater()
+   {
+	   
+   }
+   
+}

@@ -1,6 +1,3 @@
 INDEX VERSION 1.3+/home/torsi/repository/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
-1260302224.index
-1064699824.index
-3484184720.index
+3990748986.index
 506348957.index
-3794283162.index

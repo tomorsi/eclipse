@@ -2,13 +2,13 @@ package com.zingaretti.bix;
 
 import java.util.List;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.PUT;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-
-import com.tutorialspoint.User;
-import com.tutorialspoint.UserDao;
 
 @Path("/PlayerPoolService")
 public class PlayerPoolService {
@@ -19,12 +19,13 @@ public class PlayerPoolService {
    @GET
    @Path("/skaters")
    @Produces(MediaType.APPLICATION_XML)
-   public List<User> getSkaters(){
-      return userDao.getAllUsers();
+   public List<Skater> getSkaters(){
+      return skaterPoolDao.getAllSkaters();
    }	
    
    @PUT
    @Path("/skaters")
+   @Consumes(MediaType.APPLICATION_XML)
    public void addSkater()
    {
 	   
@@ -32,6 +33,7 @@ public class PlayerPoolService {
    
    @POST
    @Path("skaters")
+   @Consumes(MediaType.APPLICATION_XML)
    public void modifySkater()
    {
 	   
@@ -41,11 +43,12 @@ public class PlayerPoolService {
    @Path("/goalies")
    @Produces(MediaType.APPLICATION_XML)
    public List<Goalies> getGoalies(){
-      return goalieDao.getAllGoalies();
+      return goaliePoolDao.getAllGoalies();
    }	
    
    @PUT
    @Path("/goalies")
+   @Consumes(MediaType.APPLICATION_XML)
    public void addGoalie()
    {
 	   
@@ -53,6 +56,7 @@ public class PlayerPoolService {
    
    @POST
    @Path("/goalies")
+   @Consumes(MediaType.APPLICATION_XML)
    public void modifyGoalie()
    {
 	   

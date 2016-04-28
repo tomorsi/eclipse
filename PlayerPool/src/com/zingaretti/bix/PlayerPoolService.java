@@ -13,14 +13,14 @@ import javax.ws.rs.core.MediaType;
 @Path("/PlayerPoolService")
 public class PlayerPoolService {
 
-   SkaterPoolDao skaterDao = new SkaterPoolDao();
-   GoalPoolDao goalieDao = new GoaliePoolDao(); 
+   SkaterModel skaterModel = new SkaterModel();
+   GoalieModel goalieModel = new GoalieModel(); 
    
    @GET
    @Path("/skaters")
    @Produces(MediaType.APPLICATION_XML)
    public List<Skater> getSkaters(){
-      return skaterPoolDao.getAllSkaters();
+      return skaterModel.getFullList();
    }	
    
    @PUT
@@ -42,8 +42,8 @@ public class PlayerPoolService {
    @GET
    @Path("/goalies")
    @Produces(MediaType.APPLICATION_XML)
-   public List<Goalies> getGoalies(){
-      return goaliePoolDao.getAllGoalies();
+   public List<Goalie> getGoalies(){
+      return goalieModel.getFullList();
    }	
    
    @PUT
